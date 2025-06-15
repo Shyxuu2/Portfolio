@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (preloader) {
                 preloader.classList.add('preloader-hidden');
             }
-        }, 10); // Petit délai pour que l'animation soit visible
+        }, 300); // Petit délai pour que l'animation soit visible
         
         // Supprimer le preloader du DOM après la transition
         preloader.addEventListener('transitionend', () => {
