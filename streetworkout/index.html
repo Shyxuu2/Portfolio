@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title data-i18n="title">Zob Pro - Your Ultimate Fitness Companion</title>
+		<link rel="stylesheet" href="src/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" type="module"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	</head>
+	<body class="bg-neutral-900 text-neutral-100 font-poppins overflow-x-hidden">
+		<div id="preloader" class="fixed inset-0 bg-neutral-900 z-[100] flex flex-col justify-center items-center transition-opacity duration-500 ease-out">
+			<div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary"></div>
+			<p data-i18n="loadingText" class="mt-4 text-lg text-primary">Loading...</p>
+		</div>
+		<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3">
+			<div class="container mx-auto px-4 flex justify-between items-center">
+				<a href="#" class="text-3xl font-bold text-primary animate-fadeInLeft"><span data-i18n="brandName1">Zob</span><span class="text-accent" data-i18n="brandName2">Pro</span></a>
+				<nav class="hidden md:flex space-x-6 items-center">
+					<a href="#hero" class="nav-link hover:text-primary transition-colors duration-300 animate-fadeInDown" data-delay="100" data-i18n="homeLink">Home</a>
+					<a data-i18n="featuresLink" href="#features" class="nav-link hover:text-primary transition-colors duration-300 animate-fadeInDown" data-delay="200">Features</a>
+					<a data-i18n="workoutsLink" href="#workouts" class="nav-link hover:text-primary transition-colors duration-300 animate-fadeInDown" data-delay="300">Workouts</a>
+					<a data-i18n="pricingLink" href="#pricing" class="nav-link hover:text-primary transition-colors duration-300 animate-fadeInDown" data-delay="400">Pricing</a>
+					<a data-i18n="contactLink" href="#contact" class="nav-link hover:text-primary transition-colors duration-300 animate-fadeInDown" data-delay="500">Contact</a>
+					<a data-i18n="joinButton" href="#" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-5 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 animate-fadeInUp" data-delay="600">
+						Join Now
+					</a>
+				</nav>
+				<button id="mobile-menu-button" class="md:hidden text-2xl text-primary focus:outline-none"><i class="fas fa-bars"></i></button>
+			</div>
+			<div id="mobile-menu" class="hidden md:hidden bg-neutral-800 shadow-xl">
+				<a data-i18n="homeLink" href="#hero" class="block py-3 px-5 text-neutral-100 hover:bg-primary hover:text-white transition-colors duration-300">Home</a>
+				<a data-i18n="featuresLink" href="#features" class="block py-3 px-5 text-neutral-100 hover:bg-primary hover:text-white transition-colors duration-300">Features</a>
+				<a data-i18n="workoutsLink" href="#workouts" class="block py-3 px-5 text-neutral-100 hover:bg-primary hover:text-white transition-colors duration-300">Workouts</a>
+				<a data-i18n="pricingLink" href="#pricing" class="block py-3 px-5 text-neutral-100 hover:bg-primary hover:text-white transition-colors duration-300">Pricing</a>
+				<a data-i18n="contactLink" href="#contact" class="block py-3 px-5 text-neutral-100 hover:bg-primary hover:text-white transition-colors duration-300">Contact</a>
+				<a data-i18n="joinButton" href="#" class="block py-3 px-5 bg-primary text-white text-center font-semibold rounded-b-lg hover:bg-primary-dark transition-colors duration-300">Join Now</a>
+			</div>
+		</header>
+		<section id="hero" class="min-h-screen flex items-center bg-cover bg-center bg-no-repeat pt-20 md:pt-0" style="background-image: linear-gradient(rgba(16, 24, 39, 0.85), rgba(16, 24, 39, 0.85)), url(images/randomtreeimage.avif);">
+			<div class="container mx-auto px-4 text-center">
+				<h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight animate-popIn" data-delay="200">
+					<span data-i18n="slogan1">Transform Your</span> <span data-i18n="slogan2" class="text-primary">Body</span>, <br class="hidden md:block" />
+					<span data-i18n="slogan3">Elevate Your</span> <span data-i18n="slogan4" class="text-accent">Life</span>.
+				</h1>
+				<p data-i18n="motivationSlogan" class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto animate-popIn" data-delay="400">
+					Join Zob Pro and unlock your full potential with personalized workout plans, expert nutrition guidance, and a supportive community.
+				</p>
+				<div class="space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+					<a href="#features" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-xl transition-all duration-300 hover:scale-105 inline-block animate-popIn" data-delay="600">
+						<span data-i18n="heroDiscoverFeaturesButton">Discover Features</span> <i class="fas fa-arrow-right ml-2"></i>
+					</a>
+					<a
+						href="#pricing"
+						class="bg-transparent border-2 border-accent hover:bg-accent text-accent hover:text-neutral-900 font-semibold py-3 px-8 rounded-lg text-lg shadow-xl transition-all duration-300 hover:scale-105 inline-block animate-popIn"
+						data-delay="800"
+						data-i18n="heroViewPlansButton">
+						View Plans
+					</a>
+				</div>
+				<div class="mt-16 animate-bounce-slow">
+					<a href="#features" class="text-primary text-3xl"><i class="fas fa-chevron-down"></i></a>
+				</div>
+			</div>
+		</section>
+		<section id="features" class="py-20 bg-neutral-800">
+			<div class="container mx-auto px-4">
+				<h2 data-i18n="featuresTitle" class="text-4xl font-bold text-center mb-4 text-primary">Why <span class="text-accent">Zob Pro</span>?</h2>
+				<p data-i18n="featuresSubtitle" class="text-center text-neutral-400 mb-16 max-w-xl mx-auto">We offer a comprehensive suite of tools and resources designed to help you achieve your fitness goals effectively and enjoyably.</p>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+					<div class="feature-card bg-neutral-900 p-8 rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-primary/30">
+						<div class="text-primary text-5xl mb-6"><i class="fas fa-dumbbell"></i></div>
+						<h3 data-i18n="featuresPersonalizedWorkoutsTitle" class="text-2xl font-semibold mb-3 text-accent">Personalized Workouts</h3>
+						<p data-i18n="featuresPersonalizedWorkoutsDescription" class="text-neutral-400">Tailored fitness plans that adapt to your progress, preferences, and goals. Powered by AI, designed by experts.</p>
+					</div>
+					<div class="feature-card bg-neutral-900 p-8 rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-primary/30">
+						<div class="text-primary text-5xl mb-6"><i class="fas fa-utensils"></i></div>
+						<h3 data-i18n="featuresNutritionTrackingTitle" class="text-2xl font-semibold mb-3 text-accent">Nutrition Tracking</h3>
+						<p data-i18n="featuresNutritionTrackingDescription" class="text-neutral-400">Log meals, track calories and macros, and get insights to optimize your diet for peak performance and health.</p>
+					</div>
+					<div class="feature-card bg-neutral-900 p-8 rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-primary/30">
+						<div class="text-primary text-5xl mb-6"><i class="fas fa-chart-line"></i></div>
+						<h3 data-i18n="featuresProgressMonitoringTitle" class="text-2xl font-semibold mb-3 text-accent">Progress Monitoring</h3>
+						<p data-i18n="featuresProgressMonitoringDescription" class="text-neutral-400">Visualize your achievements with detailed charts and reports. Stay motivated by seeing how far you've come.</p>
+					</div>
+					<div class="feature-card bg-neutral-900 p-8 rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-primary/30">
+						<div class="text-primary text-5xl mb-6"><i class="fas fa-users"></i></div>
+						<h3 data-i18n="featuresSupportiveCommunityTitle" class="text-2xl font-semibold mb-3 text-accent">Supportive Community</h3>
+						<p data-i18n="featuresSupportiveCommunityDescription" class="text-neutral-400">Connect with fellow fitness enthusiasts, share your journey, and find inspiration in our active community.</p>
+					</div>
+					<div class="feature-card bg-neutral-900 p-8 rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-primary/30">
+						<div class="text-primary text-5xl mb-6"><i class="fas fa-video"></i></div>
+						<h3 data-i18n="featuresExpertLedClassesTitle" class="text-2xl font-semibold mb-3 text-accent">Expert-Led Classes</h3>
+						<p data-i18n="featuresExpertLedClassesDescription" class="text-neutral-400">Access a vast library of on-demand workout videos led by certified trainers, covering all fitness levels.</p>
+					</div>
+					<div class="feature-card bg-neutral-900 p-8 rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-primary/30">
+						<div class="text-primary text-5xl mb-6"><i class="fas fa-stopwatch-20"></i></div>
+						<h3 data-i18n="featuresRealTimeFeedbackTitle" class="text-2xl font-semibold mb-3 text-accent">Real-Time Feedback</h3>
+						<p data-i18n="featuresRealTimeFeedbackDescription" class="text-neutral-400">Get instant feedback on your form and intensity during workouts using our smart sensor integration (optional).</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="how-it-works" class="py-20 bg-neutral-900">
+			<div class="container mx-auto px-4">
+				<h2 data-i18n="howItWorksTitle" class="text-4xl font-bold text-center mb-16 text-primary">Get Started in <span class="text-accent">3 Easy Steps</span></h2>
+				<div class="grid md:grid-cols-3 gap-12 text-center">
+					<div class="step-card p-6 rounded-lg transition-shadow duration-300 hover:shadow-2xl hover:shadow-accent/20">
+						<div class="text-accent text-6xl mb-6"><i class="fas fa-user-plus"></i></div>
+						<h3 data-i18n="howItWorksStep1Title" class="text-2xl font-semibold mb-3 text-primary">1. Sign Up</h3>
+						<p data-i18n="howItWorksStep1Description" class="text-neutral-400">Create your account in minutes and tell us about your fitness goals and preferences.</p>
+					</div>
+					<div class="step-card p-6 rounded-lg transition-shadow duration-300 hover:shadow-2xl hover:shadow-accent/20">
+						<div class="text-accent text-6xl mb-6"><i class="fas fa-bullseye"></i></div>
+						<h3 data-i18n="howItWorksStep2Title" class="text-2xl font-semibold mb-3 text-primary">2. Get Your Plan</h3>
+						<p data-i18n="howItWorksStep2Description" class="text-neutral-400">Receive a personalized workout and nutrition plan tailored specifically for you by our AI.</p>
+					</div>
+					<div class="step-card p-6 rounded-lg transition-shadow duration-300 hover:shadow-2xl hover:shadow-accent/20">
+						<div class="text-accent text-6xl mb-6"><i class="fas fa-running"></i></div>
+						<h3 data-i18n="howItWorksStep3Title" class="text-2xl font-semibold mb-3 text-primary">3. Start Training</h3>
+						<p data-i18n="howItWorksStep3Description" class="text-neutral-400">Follow your plan, track your progress, and start seeing amazing results. We're with you every step!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="workouts" class="py-20 bg-neutral-800">
+			<div class="container mx-auto px-6 max-w-7xl">
+				<h2 data-i18n="workoutsSectionTitle" class="text-4xl font-bold text-center mb-16 text-white">Explore Our <span class="text-accent">Workout Universe</span></h2>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+					<div class="rounded-lg overflow-hidden shadow-lg aspect-square flex flex-col">
+						<img src="images/Tractions.avif" alt="Workout 1" class="w-full h-4/5 object-cover" />
+						<div class="p-4 bg-slate-900 text-white flex-grow"><h3 data-i18n="workoutsPullUpsTitle" class="text-xl font-semibold">Pull-ups</h3></div>
+					</div>
+					<div class="rounded-lg overflow-hidden shadow-lg aspect-square flex flex-col">
+						<img src="images/pushups.avif" alt="Workout 1" class="w-full h-4/5 object-cover" />
+						<div class="p-4 bg-slate-900 text-white flex-grow"><h3 data-i18n="workoutsPushupsTitle" class="text-xl font-semibold">Push-ups</h3></div>
+					</div>
+					<div class="rounded-lg overflow-hidden shadow-lg aspect-square flex flex-col">
+						<img src="images/Muscle_Up.avif" alt="Workout 1" class="w-full h-4/5 object-cover" />
+						<div class="p-4 bg-slate-900 text-white flex-grow"><h3 data-i18n="workoutsMuscleUpsTitle" class="text-xl font-semibold">Muscle-ups</h3></div>
+					</div>
+					<div class="rounded-lg overflow-hidden shadow-lg aspect-square flex flex-col">
+						<img src="images/Pendu.avif" alt="Workout 1" class="w-full h-4/5 object-cover" />
+						<div class="p-4 bg-slate-900 text-white flex-grow"><h3 data-i18n="workoutsGiveUpTitle" class="text-xl font-semibold">Stretching & Rest</h3></div>
+					</div>
+				</div>
+				<div class="text-center mt-12">
+					<a href="#" class="bg-accent hover:bg-accent-dark text-neutral-900 font-semibold py-3 px-8 rounded-lg text-lg shadow-xl transition-all duration-300 hover:scale-105 inline-block" data-i18n="workoutsViewAllButton">
+						View All Workouts
+					</a>
+				</div>
+			</div>
+		</section>
+		<section id="stats" class="py-20 bg-cover bg-fixed" style="background-image: linear-gradient(rgba(16, 24, 39, 0.9), rgba(16, 24, 39, 0.9)), url(images/randomtreeimage.avif);">
+			<div class="container mx-auto px-4">
+				<h2 data-i18n="statsTitle" class="text-4xl font-bold text-center mb-16 text-primary">Join Our <span class="text-accent">Growing Community</span></h2>
+				<div class="grid md:grid-cols-3 gap-10 text-center">
+					<div class="stat-item p-6">
+						<div class="text-primary text-6xl mb-4"><i class="fas fa-users"></i></div>
+						<div class="text-5xl font-extrabold text-white mb-2 relative h-16 flex justify-center items-center number-anim-container" data-target-value="25000">0</div>
+						<p data-i18n="statsHappyMembersLabel" class="text-lg text-neutral-300">Happy Members</p>
+					</div>
+					<div class="stat-item p-6">
+						<div class="text-primary text-6xl mb-4"><i class="fas fa-award"></i></div>
+						<div class="text-5xl font-extrabold text-white mb-2 relative h-16 flex justify-center items-center number-anim-container" data-target-value="1500000">0</div>
+						<p data-i18n="statsWorkoutsCompletedLabel" class="text-lg text-neutral-300">Workouts Completed</p>
+					</div>
+					<div class="stat-item p-6">
+						<div class="text-primary text-6xl mb-4"><i class="fas fa-fire"></i></div>
+						<div class="text-5xl font-extrabold text-white mb-2 relative h-16 flex justify-center items-center number-anim-container" data-target-value="75000000">0</div>
+						<p data-i18n="statsCaloriesBurnedLabel" class="text-lg text-neutral-300">Calories Burned</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="testimonials" class="py-20 bg-neutral-900">
+			<div class="container mx-auto px-4">
+				<h2 data-i18n="testimonialsTitle" class="text-4xl font-bold text-center mb-16 text-primary">What Our <span class="text-accent">Members Say</span></h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="testimonial-card bg-neutral-800 p-8 rounded-xl shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-accent/20">
+						<div class="flex items-center mb-4">
+							<img src="images/user1.jpg" alt="User Avatar" class="w-16 h-16 rounded-full mr-4 border-2 border-primary" />
+							<div>
+								<h4 data-i18n="testimonialsSarahLName" class="text-xl font-semibold text-white">Sarah L.</h4>
+								<p data-i18n="testimonialsSarahLRole" class="text-sm text-neutral-400">Fitness Enthusiast</p>
+							</div>
+						</div>
+						<p data-i18n="testimonialsSarahLQuote" class="text-neutral-300 italic">"Zob Pro has completely changed my approach to fitness. The personalized plans are incredible, and I've never felt stronger or healthier!"</p>
+						<div class="text-accent mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+					</div>
+					<div class="testimonial-card bg-neutral-800 p-8 rounded-xl shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-accent/20">
+						<div class="flex items-center mb-4">
+							<img src="images/user2.avif" alt="User Avatar" class="w-16 h-16 rounded-full mr-4 border-2 border-primary" />
+							<div>
+								<h4 data-i18n="testimonialsMikePName" class="text-xl font-semibold text-white">Mike P.</h4>
+								<p data-i18n="testimonialsMikePRole" class="text-sm text-neutral-400">Busy Professional</p>
+							</div>
+						</div>
+						<p data-i18n="testimonialsMikePQuote" class="text-neutral-300 italic">"As someone with a hectic schedule, Zob Pro's flexibility and quick workouts are a lifesaver. The nutrition tracker is a game-changer."</p>
+						<div class="text-accent mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+					</div>
+					<div class="testimonial-card bg-neutral-800 p-8 rounded-xl shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-accent/20">
+						<div class="flex items-center mb-4">
+							<img src="images/user3.avif" alt="User Avatar" class="w-16 h-16 rounded-full mr-4 border-2 border-primary" />
+							<div>
+								<h4 data-i18n="testimonialsJessicaBName" class="text-xl font-semibold text-white">Jessica B.</h4>
+								<p data-i18n="testimonialsJessicaBRole" class="text-sm text-neutral-400">New to Fitness</p>
+							</div>
+						</div>
+						<p data-i18n="testimonialsJessicaBQuote" class="text-neutral-300 italic">"I was intimidated by gyms, but Zob Pro made starting my fitness journey easy and fun. The community support is amazing!"</p>
+						<div class="text-accent mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="pricing" class="py-20 bg-neutral-800">
+			<div class="container mx-auto px-4">
+				<h2 data-i18n="pricingSectionTitle" class="text-4xl font-bold text-center mb-16 text-primary">Flexible <span class="text-accent">Pricing Plans</span></h2>
+				<div class="grid md:grid-cols-3 gap-8">
+					<div class="pricing-card bg-neutral-900 p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 flex flex-col">
+						<h3 data-i18n="pricingStarterName" class="text-2xl font-semibold text-accent mb-2">Starter</h3>
+						<p class="text-4xl font-bold text-white mb-1"><span data-i18n="pricingStarterPrice">$9</span><span data-i18n="pricingPerMonthText" class="text-lg font-normal text-neutral-400">/month</span></p>
+						<p data-i18n="pricingStarterDescription" class="text-neutral-500 mb-6">Perfect to get you started.</p>
+						<ul class="space-y-3 text-neutral-300 mb-8 flex-grow">
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingStarterFeature1">Access to 50+ workouts</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingStarterFeature2">Basic nutrition tracking</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingStarterFeature3">Community forum access</span></li>
+							<li><i class="fas fa-times-circle text-neutral-600 mr-2"></i><span data-i18n="pricingStarterFeature4Excluded">Personalized coaching</span></li>
+							<li><i class="fas fa-times-circle text-neutral-600 mr-2"></i><span data-i18n="pricingStarterFeature5Excluded">Advanced analytics</span></li>
+						</ul>
+						<a href="#" class="mt-auto w-full text-center bg-primary/80 hover:bg-primary text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300" data-i18n="pricingChoosePlanButton">Choose Plan</a>
+					</div>
+					<div class="pricing-card bg-neutral-900 p-8 rounded-xl shadow-2xl border-2 border-accent transform scale-100 md:scale-105 relative flex flex-col">
+						<div data-i18n="pricingProBadge" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-neutral-900 px-4 py-1 text-sm font-semibold rounded-full shadow-md">Most Popular</div>
+						<h3 data-i18n="pricingProName" class="text-2xl font-semibold text-primary mb-2">Pro</h3>
+						<p class="text-4xl font-bold text-white mb-1"><span data-i18n="pricingProPrice">$19</span><span data-i18n="pricingPerMonthText" class="text-lg font-normal text-neutral-400">/month</span></p>
+						<p data-i18n="pricingProDescription" class="text-neutral-500 mb-6">Unlock your full potential.</p>
+						<ul class="space-y-3 text-neutral-300 mb-8 flex-grow">
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingProFeature1">Access to All workouts</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingProFeature2">Advanced nutrition tracking</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingProFeature3">Community forum access</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingProFeature4">Personalized AI coaching</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingProFeature5">Advanced analytics & reports</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingProFeature6">Priority support</span></li>
+						</ul>
+						<a href="#" class="mt-auto w-full text-center bg-accent hover:bg-accent-dark text-neutral-900 font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg" data-i18n="pricingChoosePlanButton">
+							Choose Plan
+						</a>
+					</div>
+					<div class="pricing-card bg-neutral-900 p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 flex flex-col">
+						<h3 data-i18n="pricingEliteName" class="text-2xl font-semibold text-accent mb-2">Elite</h3>
+						<p class="text-4xl font-bold text-white mb-1"><span data-i18n="pricingElitePrice">$29</span><span data-i18n="pricingPerMonthText" class="text-lg font-normal text-neutral-400">/month</span></p>
+						<p data-i18n="pricingEliteDescription" class="text-neutral-500 mb-6">For the dedicated athlete.</p>
+						<ul class="space-y-3 text-neutral-300 mb-8 flex-grow">
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingEliteFeature1">All Pro features</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingEliteFeature2">1-on-1 with human trainer (monthly)</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingEliteFeature3">Custom meal plans</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingEliteFeature4">Exclusive workshops</span></li>
+							<li><i class="fas fa-check-circle text-primary mr-2"></i><span data-i18n="pricingEliteFeature5">Early access to new features</span></li>
+						</ul>
+						<a href="#" class="mt-auto w-full text-center bg-primary/80 hover:bg-primary text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300" data-i18n="pricingChoosePlanButton">Choose Plan</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="cta" class="py-20 bg-cover bg-center" style="background-image: linear-gradient(to right, --color-primary-opacity 0%, --color-secondary-opacity 100%), url(images/randomtreeimage.avif);">
+			<div class="container mx-auto px-4 text-center">
+				<h2 data-i18n="ctaTitle" class="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to Start Your Transformation?</h2>
+				<p data-i18n="ctaSubtitle" class="text-lg md:text-xl text-neutral-100 mb-10 max-w-2xl mx-auto">Download the Zob Pro app today or sign up on our platform. Your best self is waiting!</p>
+				<div class="flex justify-center space-x-4 mb-8">
+					<a href="#" class="transform transition-transform duration-300 hover:scale-110"><img src="images/appstore.svg" alt="App Store" class="h-14" /></a>
+					<a href="#" class="transform transition-transform duration-300 hover:scale-110"><img src="images/playstore.svg" alt="Google Play" class="h-14" /></a>
+				</div>
+				<a href="#" class="bg-accent hover:bg-accent-dark text-neutral-900 font-bold py-4 px-10 rounded-lg text-xl shadow-2xl transition-all duration-300 hover:scale-105 inline-block" data-i18n="ctaSignUpButton">
+					Sign Up Now & Get 7 Days Free!
+				</a>
+			</div>
+		</section>
+		<section id="contact" class="py-20 bg-neutral-900">
+			<div class="container mx-auto px-4">
+				<h2 data-i18n="contactSectionTitle" class="text-4xl font-bold text-center mb-16 text-primary">Get In <span class="text-accent">Touch</span></h2>
+				<div class="max-w-3xl mx-auto bg-neutral-800 p-8 md:p-12 rounded-xl shadow-2xl">
+					<form action="#" method="POST">
+						<div class="grid md:grid-cols-2 gap-6 mb-6">
+							<div>
+								<label data-i18n="contactFormFullNameLabel" for="name" class="block text-sm font-medium text-neutral-300 mb-1">Full Name</label>
+								<input
+									type="text"
+									name="name"
+									id="name"
+									class="w-full bg-neutral-700 text-white border-neutral-600 rounded-lg p-3 focus:ring-primary focus:border-primary transition-shadow duration-300 shadow-inner focus:shadow-outline"
+									placeholder="John Doe"
+								/>
+							</div>
+							<div>
+								<label data-i18n="contactFormEmailLabel" for="email" class="block text-sm font-medium text-neutral-300 mb-1">Email Address</label>
+								<input
+									type="email"
+									name="email"
+									id="email"
+									class="w-full bg-neutral-700 text-white border-neutral-600 rounded-lg p-3 focus:ring-primary focus:border-primary transition-shadow duration-300 shadow-inner focus:shadow-outline"
+									placeholder="you@example.com"
+								/>
+							</div>
+						</div>
+						<div class="mb-6">
+							<label data-i18n="contactFormSubjectLabel" for="subject" class="block text-sm font-medium text-neutral-300 mb-1">Subject</label>
+							<input
+								type="text"
+								name="subject"
+								id="subject"
+								class="w-full bg-neutral-700 text-white border-neutral-600 rounded-lg p-3 focus:ring-primary focus:border-primary transition-shadow duration-300 shadow-inner focus:shadow-outline"
+								placeholder="Question about Pro Plan"
+							/>
+						</div>
+						<div class="mb-8">
+							<label data-i18n="contactFormMessageLabel" for="message" class="block text-sm font-medium text-neutral-300 mb-1">Message</label>
+							<textarea
+								name="message"
+								id="message"
+								rows="5"
+								class="w-full bg-neutral-700 text-white border-neutral-600 rounded-lg p-3 focus:ring-primary focus:border-primary transition-shadow duration-300 shadow-inner focus:shadow-outline"
+								placeholder="Your message..."
+							></textarea>
+						</div>
+						<div class="text-center">
+							<button type="submit" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-10 rounded-lg text-lg shadow-xl transition-all duration-300 hover:scale-105">
+								<span data-i18n="contactFormSendMessageButton">Send Message</span> <i class="fas fa-paper-plane ml-2"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<footer class="bg-neutral-950 text-neutral-400 py-16">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+					<div>
+						<h5 class="text-xl font-bold text-primary mb-4"><span data-i18n="brandName1">Zob</span><span class="text-accent" data-i18n="brandName2">Pro</span></h5>
+						<p data-i18n="footerDescription" class="text-sm mb-4">Your ultimate partner in achieving health and fitness goals. Join us and transform your life.</p>
+						<div class="flex space-x-4">
+							<a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 text-xl"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 text-xl"><i class="fab fa-instagram"></i></a>
+							<a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 text-xl"><i class="fab fa-twitter"></i></a>
+							<a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 text-xl"><i class="fab fa-youtube"></i></a>
+						</div>
+					</div>
+					<div>
+						<h5 data-i18n="footerQuickLinksTitle" class="text-lg font-semibold text-white mb-4">Quick Links</h5>
+						<ul class="space-y-2">
+							<li><a href="#hero" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="homeLink">Home</a></li>
+							<li><a href="#features" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="featuresLink">Features</a></li>
+							<li><a href="#workouts" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="workoutsLink">Workouts</a></li>
+							<li><a href="#pricing" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="pricingLink">Pricing</a></li>
+							<li><a href="#" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="footerQuickLinksBlog">Blog</a></li>
+						</ul>
+					</div>
+					<div>
+						<h5 data-i18n="footerSupportTitle" class="text-lg font-semibold text-white mb-4">Support</h5>
+						<ul class="space-y-2">
+							<li><a href="#" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="footerSupportFaq">FAQ</a></li>
+							<li><a href="#contact" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="footerSupportContactUs">Contact Us</a></li>
+							<li><a href="#" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="footerSupportPrivacyPolicy">Privacy Policy</a></li>
+							<li><a href="#" class="hover:text-primary transition-colors duration-300 text-sm" data-i18n="footerSupportTermsOfService">Terms of Service</a></li>
+						</ul>
+					</div>
+					<div>
+						<h5 data-i18n="footerNewsletterTitle" class="text-lg font-semibold text-white mb-4">Newsletter</h5>
+						<p data-i18n="footerNewsletterDescription" class="text-sm mb-3">Stay updated with our latest news and offers.</p>
+						<form action="#" class="flex">
+							<input type="email" placeholder="Your Email" class="w-full bg-neutral-800 text-neutral-300 border-neutral-700 rounded-l-lg p-2 text-sm focus:ring-1 focus:ring-primary focus:outline-none" />
+							<button type="submit" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition-colors duration-300"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+				<hr class="border-neutral-700 my-8" />
+				<div class="text-center text-sm">
+					© <span id="currentYear"></span> <span data-i18n="footerCopyrightText">Zob Pro. All Rights Reserved.</span> <span data-i18n="footerDesignedWith">Designed with</span> <i class="fas fa-heart text-primary"></i>
+					<span data-i18n="footerDesignedBy">by our creative team.</span>
+				</div>
+			</div>
+		</footer>
+		<button id="backToTopBtn" class="fixed bottom-8 right-8 bg-primary hover:bg-primary-dark text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50"><i class="fas fa-arrow-up text-xl"></i></button>
+		<script src="src/main.js"></script>
+	</body>
+</html>
