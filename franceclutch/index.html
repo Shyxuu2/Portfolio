@@ -96,6 +96,30 @@
       </div>
     </div>
     <!-- Main JavaScript File -->
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyA5Mj4jXLH3x43HF6BAn9Z7RwVgFWPgn1I",
+        authDomain: "franceclutchs.firebaseapp.com",
+        databaseURL: "https://franceclutchs-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "franceclutchs",
+        storageBucket: "franceclutchs.firebasestorage.app",
+        messagingSenderId: "463129204581",
+        appId: "1:463129204581:web:e53c5505f9510a088af38c",
+        measurementId: "G-D6KQBJBYN6"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
