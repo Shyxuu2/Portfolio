@@ -1,128 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FranceClutch</title>
-
+    <title>FranceClutchs</title>
     <!-- TailwindCSS via CDN -->
     <script src="https://cdn.tailwindcss.com/3.4.1"></script>
-    
     <!-- FontAwesome 6.5.2 via CDN -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"> 
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-
-</head>
-<body class="bg-gray-900 text-gray-200 min-h-screen antialiased">
-
+    <link href="https://fonts.googleapis.com/css2?family=Huninn&family=Londrina+Shadow&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gray-900 text-gray-200 min-h-screen antialiased">
     <!-- Main Content Container -->
     <div class="container mx-auto p-4 md:p-8">
-        
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">
-                <i class="fa-solid fa-trophy text-yellow-400"></i>
-                FranceClutch
-            </h1>
-            <p class="text-gray-400">Leaderboard Minecraft des joueurs clutch français.</p>
-        </header>
-
-        <!-- Tiers Grid -->
-        <main id="ranks-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16">
-            <!-- Tier columns will be generated here by JavaScript -->
-        </main>
-        
-        <!-- Loading Indicator -->
-        <div id="loading-indicator" class="text-center mt-10 text-gray-500 text-lg">
-            <i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading player data...
-        </div>
-
+      <!-- Header -->
+      <header class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2 londrina-shadow-regular">
+          <i class="fa-solid fa-trophy text-yellow-400"></i>
+          <span class="text-blue-900">Fran</span>
+          <span class="text-white">ceClu</span>
+          <span class="text-red-600">tchs</span>
+        </h1>
+        <p class="text-gray-400">Leaderboard Minecraft des joueurs clutch français.</p>
+      </header>
+      <!-- Tiers Grid -->
+      <main id="ranks-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16">
+        <!-- Tier columns will be generated here by JavaScript -->
+      </main>
+      <!-- Loading Indicator -->
+      <div id="loading-indicator" class="text-center mt-10 text-gray-500 text-lg">
+        <i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading player data...
+      </div>
     </div>
-
     <!-- Player Modal -->
     <div id="playerModal" class="modal-backdrop">
-        <div class="modal-content" id="modalContent">
-            <!-- Close Button -->
-            <button class="modal-close" id="closeModalBtn">
-                <i class="fas fa-times"></i>
-            </button>
-
-            <!-- Loading State -->
-            <div id="loadingState" class="loading-state hidden">
-                <div class="loading-spinner"></div>
-                <p class="text-gray-400 mt-4">Fetching player details...</p>
-            </div>
-
-            <!-- Content Container -->
-            <div id="modalContentInner" class="hidden">
-                <!-- Player Header -->
-                <div class="modal-header">
-                    <!-- Skin Render -->
-                    <div class="skin-container">
-                        <img id="playerSkin" src="" alt="Player Skin" class="skin-image">
-                    </div>
-
-                    <!-- Player Info -->
-                    <div class="player-info">
-                        <h2 id="playerName" class="player-name">Loading...</h2>
-                        <p class="player-uuid">
-                            <span class="text-gray-400">UUID:</span>
-                            <span id="playerUUID" class="font-mono text-xs md:text-sm">Loading...</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Rank Badges -->
-                <div class="rank-badges">
-                    <div class="rank-badge global-rank">
-                        <i class="fas fa-globe"></i>
-                        <span class="rank-label">Global Rank</span>
-                        <span id="globalRank" class="rank-number">#--</span>
-                    </div>
-                    <div class="rank-badge tier-rank">
-                        <i class="fas fa-star"></i>
-                        <span class="rank-label">Tier Rank</span>
-                        <span id="tierRank" class="rank-number">#--</span>
-                    </div>
-                </div>
-
-                <!-- Comments Section -->
-                <div class="comments-section">
-                    <h3 class="section-title">
-                        <i class="fas fa-comments mr-2"></i>
-                        Comments
-                    </h3>
-                    <div class="comment-form">
-                        <input 
-                            type="text"
-                            id="commentAuthor"
-                            placeholder="Your name..."
-                            class="comment-author-input"
-                        >
-                        <textarea 
-                            id="commentInput"
-                            placeholder="Leave a comment..."
-                            class="comment-input"
-                        ></textarea>
-                        <button id="submitCommentBtn" class="submit-button">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Post Comment
-                        </button>
-                    </div>
-                    <div id="commentsList" class="comments-list">
-                        <!-- Comments will be rendered here -->
-                    </div>
-                </div>
-            </div>
+      <div class="modal-content" id="modalContent">
+        <!-- Close Button -->
+        <button class="modal-close" id="closeModalBtn">
+          <i class="fas fa-times"></i>
+        </button>
+        <!-- Loading State -->
+        <div id="loadingState" class="loading-state hidden">
+          <div class="loading-spinner"></div>
+          <p class="text-gray-400 mt-4">Fetching player details...</p>
         </div>
+        <!-- Content Container -->
+        <div id="modalContentInner" class="hidden">
+          <!-- Player Header -->
+          <div class="modal-header">
+            <!-- Skin Render -->
+            <div class="skin-container">
+              <img id="playerSkin" src="" alt="Player Skin" class="skin-image">
+            </div>
+            <!-- Player Info -->
+            <div class="player-info">
+              <h2 id="playerName" class="player-name">Loading...</h2>
+              <p class="player-uuid">
+                <span class="text-gray-400">UUID:</span>
+                <span id="playerUUID" class="font-mono text-xs md:text-sm">Loading...</span>
+              </p>
+            </div>
+          </div>
+          <!-- Rank Badges -->
+          <div class="rank-badges">
+            <div class="rank-badge global-rank">
+              <i class="fas fa-globe"></i>
+              <span class="rank-label">Global Rank</span>
+              <span id="globalRank" class="rank-number">#--</span>
+            </div>
+            <div class="rank-badge tier-rank">
+              <i class="fas fa-star"></i>
+              <span class="rank-label">Tier Rank</span>
+              <span id="tierRank" class="rank-number">#--</span>
+            </div>
+          </div>
+          <!-- Comments Section -->
+          <div class="comments-section">
+            <h3 class="section-title">
+              <i class="fas fa-comments mr-2"></i> Comments
+            </h3>
+            <div class="comment-form">
+              <input type="text" id="commentAuthor" placeholder="Your name..." class="comment-author-input">
+              <textarea id="commentInput" placeholder="Leave a comment..." class="comment-input"></textarea>
+              <button id="submitCommentBtn" class="submit-button">
+                <i class="fas fa-paper-plane mr-2"></i> Post Comment </button>
+            </div>
+            <div id="commentsList" class="comments-list">
+              <!-- Comments will be rendered here -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
     <!-- Main JavaScript File -->
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
