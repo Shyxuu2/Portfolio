@@ -133,6 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
             tierColumn.className = 'bg-gray-800 rounded-lg p-4 shadow-lg flex flex-col w-[200px]';
 
             const iconHTML = tierIcons[tierName] || '<i class="fa-solid fa-circle"></i>';
+            const tierTextColors = {
+                "Tier 1": "text-[#007bff]", // bleu
+                "Tier 2": "text-[#00ffbf]", // vert
+                "Tier 3": "text-[#eeff00]", // jaune
+                "Tier 4": "text-[#ff0000]", // rouge
+                "Tier 5": "text-[#ffffff]", // blanc/gris
+            };
+
             
             const playerListHTML = players.map(player => {
                 const bgClass = player.isSpecial ? 'bg-emerald-700' : 'bg-emerald-900';
@@ -149,11 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                 `;
             }).join('');
-
+            const textColorClass = tierTextColors[tierName] || "text-white";
             tierColumn.innerHTML = `
-                <h2 class="text-xl font-semibold border-b border-gray-700 pb-3 mb-4 flex items-center gap-3">
+                <h2 class="text-4xl font-semibold border-b border-gray-700 pb-3 mb-4 flex items-center gap-3 ${textColorClass} jersey-10-regular">
                     ${iconHTML} ${tierName}
                 </h2>
+
                 <ul class="space-y-2">
                     ${playerListHTML || '<li class="text-gray-500 italic">No players in this tier.</li>'}
                 </ul>
