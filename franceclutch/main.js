@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- DOM ELEMENTS ---
     const gridContainer = document.getElementById('ranks-grid');
     const loadingIndicator = document.getElementById('loading-indicator');
-    
+
     // Modal Elements
     const modal = document.getElementById('playerModal');
     const modalContent = document.getElementById('modalContent');
     const modalContentInner = document.getElementById('modalContentInner');
     const loadingState = document.getElementById('loadingState');
     const closeModalBtn = document.getElementById('closeModalBtn');
-    
+
     // Modal Content Elements
     const playerNameEl = document.getElementById('playerName');
     const playerUUIDEl = document.getElementById('playerUUID');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const csvText = await response.text();
             const rawRanks = parseCSV(csvText);
             const processedRanks = processRanks(rawRanks);
-            
+
             displayRanks(processedRanks);
             setupEventListeners();
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             processedData[tierName] = rawRanks[tierName].map((playerName, index) => {
                 const isSpecial = playerName.startsWith('*') && playerName.endsWith('*');
                 const cleanName = isSpecial ? playerName.slice(1, -1) : playerName;
-                
+
                 const playerObject = {
                     originalName: playerName,
                     cleanName: cleanName,
@@ -116,32 +116,32 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {object} ranksData - The fully processed data with ranks.
      */
     function displayRanks(ranksData) {
-        gridContainer.innerHTML = ''; 
-        
+        gridContainer.innerHTML = '';
+
         const tierIcons = {
-            "Tier 1": '<i class="fa-sharp-duotone fa-solid fa-trophy-star" style="--fa-primary-color: #2bbfca; --fa-secondary-color: #007bff;"></i>',
-            "Tier 2": '<i class="fa-sharp-duotone fa-solid fa-trophy" style="--fa-primary-color: #2bca68; --fa-secondary-color: #00ffbf;"></i>',
-            "Tier 3": '<i class="fa-sharp-duotone fa-solid fa-trophy" style="--fa-primary-color: #cabd2b; --fa-secondary-color: #eeff00;"></i>',
-            "Tier 4": '<i class="fa-sharp-duotone fa-solid fa-trophy" style="--fa-primary-color: #ca2b2b; --fa-secondary-color: #ff0000;"></i>',
-            "Tier 5": '<i class="fa-sharp-duotone fa-solid fa-trophy" style="--fa-primary-color: #c2c2c2; --fa-secondary-color: #ffffff;"></i>'
+            "Tier 1": '<i class="fa-solid fa-trophy-star"></i>',
+            "Tier 2": '<i class="fa-solid fa-trophy"></i>',
+            "Tier 3": '<i class="fa-solid fa-trophy"></i>',
+            "Tier 4": '',
+            "Tier 5": ''
         };
-        
+
         for (const tierName in ranksData) {
             const players = ranksData[tierName];
-            
+
             const tierColumn = document.createElement('div');
             tierColumn.className = 'bg-gray-800 rounded-lg p-4 shadow-lg flex flex-col w-[200px]';
 
-            const iconHTML = tierIcons[tierName] || '<i class="fa-solid fa-circle"></i>';
+            const iconHTML = tierIcons[tierName];
             const tierTextColors = {
-                "Tier 1": "text-[#007bff]", // bleu
-                "Tier 2": "text-[#00ffbf]", // vert
-                "Tier 3": "text-[#eeff00]", // jaune
-                "Tier 4": "text-[#ff0000]", // rouge
+                "Tier 1": "text-[#c1c400]", // bleu
+                "Tier 2": "text-[#c7c7c7]", // vert
+                "Tier 3": "text-[#bf6900]", // jaune
+                "Tier 4": "text-[#595959]", // rouge
                 "Tier 5": "text-[#ffffff]", // blanc/gris
             };
 
-            
+
             const playerListHTML = players.map(player => {
                 const bgClass = player.isSpecial ? 'bg-emerald-700' : 'bg-emerald-900';
                 return `
@@ -152,14 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-tier-name="${tierName}">
                         <span class="font-semibold">#${player.tierRank}</span>
                         <span class="ml-2">${player.cleanName}</span>
-                        <img class="mx-[5px] flex justify-self-end ml-auto" src="https://mc-heads.net/avatar/${player.cleanName}/25"></img>
+                        <img class="mx-[5px] flex justify-self-end ml-auto rounded-sm" src="https://mc-heads.net/avatar/${player.cleanName}/25"></img>
                     </li>
                     
                 `;
             }).join('');
             const textColorClass = tierTextColors[tierName] || "text-white";
             tierColumn.innerHTML = `
-                <h2 class="text-4xl font-semibold border-b border-gray-700 pb-3 mb-4 flex items-center gap-3 ${textColorClass} jersey-10-regular">
+                <h2 class="text-2xl font-semibold border-b border-gray-700 pb-3 mb-4 flex items-center gap-3 ${textColorClass} huninn-regular">
                     ${iconHTML} ${tierName}
                 </h2>
 
@@ -195,11 +195,11 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const mojangData = await fetchPlayerData(playerData.username);
             currentPlayer = mojangData; // Set current player for comments
-            
+
             // Update modal with fetched data
             playerNameEl.textContent = mojangData.name;
             playerUUIDEl.textContent = formatUUID(mojangData.uuid);
-            
+
             const skinUrl = `https://render.crafty.gg/3d/bust/${mojangData.uuid}`;
             playerSkinEl.src = skinUrl;
             playerSkinEl.onerror = () => {
@@ -240,11 +240,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Player not found or API error');
             }
             const data = await response.json();
-            return { name: data.name, uuid: data.id };
+            return {
+                name: data.name,
+                uuid: data.id
+            };
         } catch (error) {
             console.warn("Mojang API failed, trying fallback. Error:", error);
             // Fallback for demonstration if main API fails
-            return { name: username, uuid: "00000000-0000-0000-0000-000000000000" };
+            return {
+                name: username,
+                uuid: "00000000-0000-0000-0000-000000000000"
+            };
         }
     }
 
@@ -258,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return uuid.replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5');
     }
 
-    
+
     // --- COMMENTS LOGIC (localStorage-based) ---
 
     function getCommentsKey() {
@@ -271,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
             commentsList.innerHTML = `<p class="text-gray-500 text-center">Could not load comments.</p>`;
             return;
         }
-        
+
         const savedComments = localStorage.getItem(key);
         const comments = savedComments ? JSON.parse(savedComments) : [];
         renderComments(comments);
@@ -292,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
             return;
         }
-        
+
         commentsList.innerHTML = comments.map(comment => `
             <div class="comment-item">
                 <div class="comment-header">
@@ -326,11 +332,11 @@ document.addEventListener('DOMContentLoaded', () => {
             text: text,
             timestamp: new Date().toISOString()
         };
-        
+
         comments.unshift(newComment);
         saveComments(comments);
         renderComments(comments);
-        
+
         commentInput.value = ''; // Clear comment text
         commentInput.focus();
     });
@@ -375,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 openModal(playerData);
             }
         });
-        
+
         // Modal closing events
         closeModalBtn.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
