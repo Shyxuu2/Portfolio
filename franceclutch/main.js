@@ -119,43 +119,45 @@ document.addEventListener('DOMContentLoaded', () => {
         gridContainer.innerHTML = ''; 
         
         const tierIcons = {
-            "Tier 1": "fa-solid fa-diamond",
-            "Tier 2": "fa-solid fa-star",
-            "Tier 3": "fa-solid fa-trophy",
-            "Tier 4": "fa-solid fa-shield",
-            "Tier 5": "fa-solid fa-bone"
+            "Tier 1": '<i class="fa-sharp-duotone fa-solid fa-trophy-star" style="--fa-primary-color: #2bbfca; --fa-secondary-color: #007bff;"></i>',
+            "Tier 2": '<i class="fa-sharp-duotone fa-solid fa-trophy" style="--fa-primary-color: #2bca68; --fa-secondary-color: #00ffbf;"></i>',
+            "Tier 3": '<i class="fa-sharp-duotone fa-solid fa-trophy" style="--fa-primary-color: #cabd2b; --fa-secondary-color: #eeff00;"></i>',
+            "Tier 4": '<i class="fa-sharp-duotone fa-solid fa-trophy" style="--fa-primary-color: #ca2b2b; --fa-secondary-color: #ff0000;"></i>',
+            "Tier 5": '<i class="fa-sharp-duotone fa-solid fa-trophy" style="--fa-primary-color: #c2c2c2; --fa-secondary-color: #ffffff;"></i>'
         };
         
         for (const tierName in ranksData) {
             const players = ranksData[tierName];
             
             const tierColumn = document.createElement('div');
-            tierColumn.className = 'bg-gray-800 rounded-lg p-4 shadow-lg flex flex-col';
+            tierColumn.className = 'bg-gray-800 rounded-lg p-4 shadow-lg flex flex-col w-[200px]';
 
-            const iconClass = tierIcons[tierName] || 'fa-solid fa-circle';
+            const iconHTML = tierIcons[tierName] || '<i class="fa-solid fa-circle"></i>';
             
             const playerListHTML = players.map(player => {
                 const bgClass = player.isSpecial ? 'bg-emerald-700' : 'bg-emerald-900';
                 return `
-                    <li class="player-item cursor-pointer text-white ${bgClass} border border-black/50 p-2 hover:translate-x-1 transition-transform duration-200 ease-in-out rounded-md"
+                    <li class="player-item cursor-pointer text-white ${bgClass} border border-black/50 p-2 hover:translate-x-2 transition-transform duration-200 ease-in-out rounded-md flex items-center justify-start"
                         data-username="${player.cleanName}"
                         data-global-rank="${player.globalRank}"
                         data-tier-rank="${player.tierRank}"
                         data-tier-name="${tierName}">
                         <span class="font-semibold">#${player.tierRank}</span>
                         <span class="ml-2">${player.cleanName}</span>
+                        <img class="mx-[5px] flex justify-self-end ml-auto" src="https://mc-heads.net/avatar/${player.cleanName}/25"></img>
                     </li>
+                    
                 `;
             }).join('');
 
             tierColumn.innerHTML = `
                 <h2 class="text-xl font-semibold border-b border-gray-700 pb-3 mb-4 flex items-center gap-3">
-                    <i class="${iconClass}"></i> ${tierName}
+                    ${iconHTML} ${tierName}
                 </h2>
                 <ul class="space-y-2">
                     ${playerListHTML || '<li class="text-gray-500 italic">No players in this tier.</li>'}
                 </ul>
-            `;
+`;
             gridContainer.appendChild(tierColumn);
         }
     }
