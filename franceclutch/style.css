@@ -263,3 +263,6 @@
 .hidden {
     display: none !important;
 }
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+}
