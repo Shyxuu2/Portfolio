@@ -125,26 +125,40 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 
 		for (const tierName of sortedTiers) {
-			processedData[tierName] = rawRanks[tierName].map((playerName, index) => {
+			const playersRaw = rawRanks[tierName].map((playerName, index) => {
 				const isSpecial = playerName.startsWith('*') && playerName.endsWith('*');
 				const cleanName = isSpecial ? playerName.slice(1, -1) : playerName;
 
-				// --- LOGIQUE DE POINTS ---
 				const tierPoints = pointMap[tierName];
 				const points = isSpecial ? tierPoints.special : tierPoints.normal;
 
-				const playerObject = {
+				return {
 					originalName: playerName,
-					cleanName: cleanName,
-					isSpecial: isSpecial,
-					tierRank: index + 1,
-					globalRank: globalRankCounter,
-					points: points
+					cleanName,
+					isSpecial,
+					originalIndex: index,
+					points
 				};
-				globalRankCounter++;
-				return playerObject;
+			});
+
+			// 👉 trie en mettant les spéciaux en haut mais garde l’ordre original
+			const sortedPlayers = playersRaw.sort((a, b) => {
+				if (a.isSpecial === b.isSpecial) {
+					return a.originalIndex - b.originalIndex;
+				}
+				return b.isSpecial - a.isSpecial; // true avant false
+			});
+
+			// remets les rangs (tierRank et globalRank)
+			processedData[tierName] = sortedPlayers.map((player, i) => {
+				return {
+					...player,
+					tierRank: i + 1,
+					globalRank: globalRankCounter++,
+				};
 			});
 		}
+
 		return processedData;
 	}
 
@@ -189,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-tier-rank="${player.tierRank}"
                         data-tier-name="${tierName}"
                         data-points="${player.points}"
-						data-isspecial="${player.isSpecial}">
+						data-isspecial="${player.isSpecial ? 'true' : 'false'}">
                         <span class="font-semibold">#${player.tierRank}</span>
                         <span class="ml-2">${player.cleanName}</span>
                         <img class="mx-[5px] flex justify-self-end ml-auto rounded-sm" src="https://mc-heads.net/avatar/${player.cleanName}/25"></img>
@@ -228,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		modalContentInner.classList.add('hidden');
 		globalRankEl.textContent = `#${playerData.globalRank}`;
 		const shortTier = playerData.tierName.replace("Tier ", "");
-		const specialPrefix = playerData.isSpecial === "true" ? "H" : "L";
+		const specialPrefix = playerData.isSpecial ? "H" : "L";
 		tierRankEl.textContent = `${specialPrefix}T${shortTier}`;
 		playerPointsEl.textContent = `${playerData.points} pts`;
 		playerNameEl.textContent = playerData.username;
