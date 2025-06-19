@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const commentInput = document.getElementById('commentInput');
 	const submitCommentBtn = document.getElementById('submitCommentBtn');
 	const commentsList = document.getElementById('commentsList');
-    const playerPointsEl = document.getElementById('playerPoints');
+	const playerPointsEl = document.getElementById('playerPoints');
 
 	let currentPlayer = null;
 
@@ -90,48 +90,63 @@ document.addEventListener('DOMContentLoaded', () => {
 	 * @param {object} rawRanks - The object from parseCSV.
 	 * @returns {object} - A structured object with player details including ranks.
 	 */
-    const pointMap = {
-    	"Tier 1": { normal: 45, special: 60 },
-    	"Tier 2": { normal: 20, special: 30 },
-    	"Tier 3": { normal: 6,  special: 10 },
-    	"Tier 4": { normal: 3,  special: 4 },
-    	"Tier 5": { normal: 1,  special: 2 },
+	const pointMap = {
+		"Tier 1": {
+			normal: 45,
+			special: 60
+		},
+		"Tier 2": {
+			normal: 20,
+			special: 30
+		},
+		"Tier 3": {
+			normal: 6,
+			special: 10
+		},
+		"Tier 4": {
+			normal: 3,
+			special: 4
+		},
+		"Tier 5": {
+			normal: 1,
+			special: 2
+		},
 	};
 
 
 	function processRanks(rawRanks) {
-    const processedData = {};
-    let globalRankCounter = 1;
+		const processedData = {};
+		let globalRankCounter = 1;
 
-    const sortedTiers = Object.keys(rawRanks).sort((a, b) => {
-        const numA = parseInt(a.match(/\d+/) || 0);
-        const numB = parseInt(b.match(/\d+/) || 0);
-        return numA - numB;
-    });
+		const sortedTiers = Object.keys(rawRanks).sort((a, b) => {
+			const numA = parseInt(a.match(/\d+/) || 0);
+			const numB = parseInt(b.match(/\d+/) || 0);
+			return numA - numB;
+		});
 
-    for (const tierName of sortedTiers) {
-        processedData[tierName] = rawRanks[tierName].map((playerName, index) => {
-            const isSpecial = playerName.startsWith('*') && playerName.endsWith('*');
-            const cleanName = isSpecial ? playerName.slice(1, -1) : playerName;
+		for (const tierName of sortedTiers) {
+			processedData[tierName] = rawRanks[tierName].map((playerName, index) => {
+				const isSpecial = playerName.startsWith('*') && playerName.endsWith('*');
+				const cleanName = isSpecial ? playerName.slice(1, -1) : playerName;
 
-            // --- LOGIQUE DE POINTS ---
-            const tierPoints = pointMap[tierName];
-			const points = isSpecial ? tierPoints.special : tierPoints.normal;
+				// --- LOGIQUE DE POINTS ---
+				const tierPoints = pointMap[tierName];
+				const points = isSpecial ? tierPoints.special : tierPoints.normal;
 
-            const playerObject = {
-                originalName: playerName,
-                cleanName: cleanName,
-                isSpecial: isSpecial,
-                tierRank: index + 1,
-                globalRank: globalRankCounter,
-                points: points
-            };
-            globalRankCounter++;
-            return playerObject;
-        });
-    }
-    return processedData;
-}
+				const playerObject = {
+					originalName: playerName,
+					cleanName: cleanName,
+					isSpecial: isSpecial,
+					tierRank: index + 1,
+					globalRank: globalRankCounter,
+					points: points
+				};
+				globalRankCounter++;
+				return playerObject;
+			});
+		}
+		return processedData;
+	}
 
 
 	/**
@@ -173,7 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-global-rank="${player.globalRank}"
                         data-tier-rank="${player.tierRank}"
                         data-tier-name="${tierName}"
-                        data-points="${player.points}">
+                        data-points="${player.points}"
+						data-isspecial="${player.isSpecial}">
                         <span class="font-semibold">#${player.tierRank}</span>
                         <span class="ml-2">${player.cleanName}</span>
                         <img class="mx-[5px] flex justify-self-end ml-auto rounded-sm" src="https://mc-heads.net/avatar/${player.cleanName}/25"></img>
@@ -211,8 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		loadingState.classList.remove('hidden');
 		modalContentInner.classList.add('hidden');
 		globalRankEl.textContent = `#${playerData.globalRank}`;
-		tierRankEl.textContent = `#${playerData.tierRank} (${playerData.tierName})`;
-        playerPointsEl.textContent = `${playerData.points} pts`;
+		const shortTier = playerData.tierName.replace("Tier ", "");
+		const specialPrefix = playerData.isSpecial === "true" ? "H" : "L";
+		tierRankEl.textContent = `${specialPrefix}T${shortTier}`;
+		playerPointsEl.textContent = `${playerData.points} pts`;
 		playerNameEl.textContent = playerData.username;
 		playerUUIDEl.textContent = 'Loading...';
 		playerSkinEl.src = ''; // Clear previous skin
@@ -399,12 +417,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			const playerItem = e.target.closest('.player-item');
 			if (playerItem) {
 				const playerData = {
-                    username: playerItem.dataset.username,
-                    globalRank: playerItem.dataset.globalRank,
-                    tierRank: playerItem.dataset.tierRank,
-                    tierName: playerItem.dataset.tierName,
-                    points: playerItem.dataset.points
-                };
+					username: playerItem.dataset.username,
+					globalRank: playerItem.dataset.globalRank,
+					tierRank: playerItem.dataset.tierRank,
+					tierName: playerItem.dataset.tierName,
+					points: playerItem.dataset.points,
+					isSpecial: playerItem.dataset.isspecial === "true"
+				};
 
 				openModal(playerData);
 			}
