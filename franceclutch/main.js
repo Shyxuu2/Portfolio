@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const players = ranksData[tierName];
 
 			const tierColumn = document.createElement('div');
-			tierColumn.className = 'bg-gray-800 rounded-lg p-4 shadow-lg flex flex-col w-[200px]';
+			tierColumn.className = 'bg-gray-800 rounded-lg p-4 shadow-lg flex flex-col w-full';
 
 			const iconHTML = tierIcons[tierName];
 			const tierTextColors = {
