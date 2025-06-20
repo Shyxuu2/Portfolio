@@ -3,18 +3,28 @@ $(document).ready(function() {
     // Preloader
     const preloader = $('#preloader');
     if (preloader.length) {
-        $(window).on('load', function() {
+    if (preloader.length) {
+    function hidePreloader() {
+        setTimeout(function() {
+            preloader.css('opacity', '0');
             setTimeout(function() {
-                preloader.css('opacity', '0');
-                setTimeout(function() {
-                    preloader.hide();
-                    // Trigger entry animations after preloader is gone
-                    animateOnEntry();
-                }, 300); // Match preloader transition duration
-            }, 1); // Minimum display time for preloader
-        });
+                preloader.hide();
+                animateOnEntry();
+            }, 300); // Durée du fade out
+        }, 1); // Petite pause avant d'enlever
+    }
+
+    if (document.readyState === 'complete') {
+        // Si la page est déjà complètement chargée (genre au reload)
+        hidePreloader();
     } else {
-        animateOnEntry(); // If no preloader, animate immediately
+        $(window).on('load', function() {
+            // Si la page charge "normalement"
+            hidePreloader();
+        });
+    }
+} else {
+    animateOnEntry(); // Si y'a pas de preloader du tout
     }
 
     // Function to trigger initial page load animations (header elements)
