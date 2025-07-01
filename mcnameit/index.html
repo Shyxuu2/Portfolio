@@ -1,71 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mcnameit</title>
-    <!-- Google Fonts: Inter for UI, Fira Code for editor -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
-  <script type="module" crossorigin src="./assets/index-DEEgEuWR.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-tuMElhjP.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mcnameit</title>
+
+  <!-- Google Fonts: Inter for UI, Fira Code for editor -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <script type="module" crossorigin src="/assets/index-1h_Ak-uR.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-3QnvtFAL.css">
 </head>
+
 <body class="bg-slate-900 text-slate-200 font-sans antialiased">
+  <div class="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div
+      class="w-full max-w-5xl bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden ring-1 ring-white/10">
 
-    <div class="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
-        <div class="w-full max-w-5xl bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden ring-1 ring-white/10">
-            
-            <!-- Toolbar -->
-            <div id="toolbar" class="p-3 bg-slate-900/70 border-b border-slate-700">
-                <div class="flex flex-wrap items-center gap-4">
-                    <!-- Color Buttons -->
-                    <div class="flex items-center gap-2" id="color-buttons-container">
-                        <!-- Color buttons will be dynamically inserted here -->
-                    </div>
+      <!-- Toolbar -->
+      <div id="toolbar" class="p-3 bg-slate-900/70 border-b border-slate-700">
+        <div class="flex flex-wrap items-center gap-3">
 
-                    <div class="w-px h-6 bg-slate-600"></div>
+          <!-- Color Buttons -->
+          <div class="flex items-center gap-2" id="color-buttons-container">
+            <!-- Color buttons will be dynamically inserted here -->
+          </div>
 
-                    <!-- Style Buttons -->
-                    <div class="flex items-center gap-2">
-                        <button data-command="bold" class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors font-bold" title="Bold (§l)">B</button>
-                        <button data-command="italic" class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors italic" title="Italic (§o)">I</button>
-                        <button data-command="underline" class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors underline" title="Underline (§n)">U</button>
-                        <button data-command="strikethrough" class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors line-through" title="Strikethrough (§m)">S</button>
-                    </div>
+          <div class="w-px h-6 bg-slate-600"></div>
 
-                    <div class="w-px h-6 bg-slate-600"></div>
-
-                    <!-- Actions -->
-                    <div class="flex items-center gap-2">
-                         <!-- NEW Highlight Button -->
-                            <button data-command="backColor" data-value="yellow" class="size-5 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors" title="Randomize (§k)">
-                              <img src="shuffle.png" style="filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(102%) contrast(102%);" alt="shuffle icon">
-                            </button>
-                    </div>
-
-                    <!-- Export Button (at the end) -->
-                    <div class="flex-grow"></div>
-                    <button id="export-btn" class="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-500 font-medium transition-colors">Exporter</button>
-                </div>
+          <!-- Style Buttons -->
+          <div class="flex items-center gap-2">
+            <div class="relative group flex justify-center">
+              <button data-command="bold"
+              class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors font-bold"
+              >B</button>
+              <span class="
+                  absolute top-full mt-3 px-2 py-1
+                  bg-slate-800 text-white text-sm rounded-md
+                  whitespace-nowrap
+                  invisible opacity-0 scale-95
+                  transition-all
+                  group-hover:visible group-hover:opacity-100 group-hover:scale-100
+                  pointer-events-none
+                ">
+                Bold (§l)
+              </span>
             </div>
+            <div class="relative group flex justify-center">
+              <button data-command="italic"
+              class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors italic"
+              >I</button>
+              <span class="
+                  absolute top-full mt-3 px-2 py-1
+                  bg-slate-800 text-white text-sm rounded-md
+                  whitespace-nowrap
+                  invisible opacity-0 scale-95
+                  transition-all
+                  group-hover:visible group-hover:opacity-100 group-hover:scale-100
+                  pointer-events-none
+                ">
+                Italic (§o)
+              </span>
+            </div>
+            <div class="relative group flex justify-center">
+              <button data-command="underline"
+              class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors underline"
+              >U</button>
+              <span class="
+                  absolute top-full mt-3 px-2 py-1
+                  bg-slate-800 text-white text-sm rounded-md
+                  whitespace-nowrap
+                  invisible opacity-0 scale-95
+                  transition-all
+                  group-hover:visible group-hover:opacity-100 group-hover:scale-100
+                  pointer-events-none
+                ">
+                Underline (§n)
+              </span>
+            </div>
+            <div class="relative group flex justify-center">
+              <button data-command="strikethrough"
+              class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors line-through"
+              >S</button>
+              <span class="
+                  absolute top-full mt-3 px-2 py-1
+                  bg-slate-800 text-white text-sm rounded-md
+                  whitespace-nowrap
+                  invisible opacity-0 scale-95
+                  transition-all
+                  group-hover:visible group-hover:opacity-100 group-hover:scale-100
+                  pointer-events-none
+                ">
+                Strikethrough (§m)
+              </span>
+            </div>
+          </div>
 
-            <!-- Editor -->
-            <div 
-                id="editor"
-                contenteditable="true"
-                class="p-6 text-lg min-h-[40vh] max-h-[60vh] overflow-y-auto focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-inset rounded-b-xl"
-                spellcheck="false"
-            ><div>Type something here... You can <strong>style</strong> text with the toolbar.</div><div><br></div><div>Try combining <em class="italic"><u>styles and <font color="#55ff55">colors</font></u></em>!</div></div>
+          <div class="w-px h-6 bg-slate-600"></div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-2">
+            <!-- NEW Highlight Button -->
+            
+            <div class="relative group flex justify-center">
+                <button data-command="backColor" data-value="yellow"
+                class="size-9 flex items-center justify-center rounded-md hover:bg-slate-700 transition-colors"
+                >
+                    <img src="shuffle.png"
+                    style="filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(102%) contrast(102%);"
+                    class="size-4"
+                    alt="shuffle icon" />
+                </button>
+                <span class="
+                  absolute top-full mt-3 px-2 py-1
+                  bg-slate-800 text-white text-sm rounded-md
+                  whitespace-nowrap
+                  invisible opacity-0 scale-95
+                  transition-all
+                  group-hover:visible group-hover:opacity-100 group-hover:scale-100
+                  pointer-events-none
+                ">
+                Obfuscate (§k)
+              </span>
+            </div>
+          </div>
+
+          <!-- Export Button (at the end) -->
+          <div class="flex-grow"></div>
+          <button id="export-btn"
+            class="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-500 font-medium transition-colors">Exporter</button>
+
+        </div>
+      </div>
+
+      <!-- Editor -->
+      <div id="editor" contenteditable="true"
+        class="p-6 leading-9 text-lg min-h-[40vh] max-h-[60vh] overflow-y-auto focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-inset rounded-b-xl"
+        spellcheck="false">
+        <div>Type something here... You can <strong>style</strong> text with the toolbar.</div>
+        <div><br /></div>
+        <div>Try combining <em class="italic"><u>styles and <font color="#55ff55">colors</font></u></em>!</div>
+      </div>
 
             <!-- Export Output Area -->
-            <div id="export-container" class="bg-slate-900/80 p-4 border-t border-slate-700 hidden">
-                <label for="export-output" class="block mb-2 font-medium text-slate-400">Code exporté:</label>
-                <pre class="w-full bg-slate-950 p-4 rounded-md text-sm text-emerald-400 font-mono overflow-x-auto"><code id="export-output"></code></pre>
+      <div id="export-container" class="bg-slate-900/80 p-4 border-t border-slate-700 hidden">
+        <div class="flex justify-between items-center mb-2">
+          <label for="export-output" class="font-medium text-slate-400">Code exporté :</label>
+          <div class="flex items-center gap-2">
+            <!-- NEW: Wrapper for the Standard button with tooltip -->
+            <div class="relative group flex justify-center">
+              <button id="toggle-standard"
+                class="text-sm px-3 py-1 bg-slate-700 text-white rounded hover:bg-sky-600 transition-colors">§</button>
+              <span class="
+                  absolute bottom-full mb-3 px-2 py-1
+                  bg-slate-800 text-white text-sm rounded-md
+                  whitespace-nowrap
+                  invisible opacity-0 scale-95
+                  transition-all
+                  group-hover:visible group-hover:opacity-100 group-hover:scale-100
+                  pointer-events-none
+                ">
+                Format standard (Commandes in-game)
+              </span>
             </div>
-        </div>
-    </div>
 
+            <!-- NEW: Wrapper for the MOTD button with tooltip -->
+            <div class="relative group flex justify-center">
+              <button id="toggle-motd"
+                class="text-sm px-3 py-1 bg-slate-700 text-white rounded hover:bg-sky-600 transition-colors">\u00a7</button>
+              <span class="
+                  absolute bottom-full mb-3 -translate-x-4 px-2 py-1 transform
+                  bg-slate-800 text-white text-sm rounded-md
+                  whitespace-nowrap
+                  invisible opacity-0 scale-95
+                  transition-all
+                  group-hover:visible group-hover:opacity-100 group-hover:scale-100
+                  pointer-events-none
+                ">
+                Format JSON/MOTD (server.properties)
+              </span>
+            </div>
+
+            <button id="copy-export-btn"
+              class="text-sm px-3 py-1 bg-slate-700 text-white rounded hover:bg-sky-600 transition-colors">Copier</button>
+          </div>
+        </div>
+        <pre class="w-full bg-slate-950 p-4 rounded-md text-sm text-emerald-400 font-mono overflow-x-auto"><code id="export-output"></code></pre>
+      </div>
+
+    </div>
+  </div>
+
+  <span id="notification"
+    class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-opacity duration-300 z-50">
+    Copié dans le presse-papier !
+  </span>
 </body>
+
 </html>
