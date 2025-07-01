@@ -748,26 +748,26 @@
   font-family: Minecraft Regular;
   font-style: normal;
   font-weight: 400;
-  src: local(Minecraft Regular), url(mcnameit/1_MinecraftRegular1.woff) format("woff");
+  src: local(Minecraft Regular), url(https://raw.githubusercontent.com/Shyxuu2/Portfolio/main/1_MinecraftRegular1.woff) format("woff");
 }
 @font-face {
   font-family: Minecraft Italic;
   font-style: italic;
   font-weight: 400;
-  src: local(Minecraft Italic), url(mcnameit/2_MinecraftItalic1.woff) format("woff");
+  src: local(Minecraft Italic), url(https://raw.githubusercontent.com/Shyxuu2/Portfolio/main/2_MinecraftItalic1.woff) format("woff");
 }
 @font-face {
   font-family: Minecraft Bold;
   font-style: normal;
   font-weight: 700;
-  src: local(Minecraft Bold), url(mcnameit/3_MinecraftBold1.woff) format("woff");
+  src: local(Minecraft Bold), url(https://raw.githubusercontent.com/Shyxuu2/Portfolio/main/3_MinecraftBold1.woff) format("woff");
 }
 @font-face {
   font-family: Minecraft Bold Italic;
   font-style: italic;
   font-weight: 700;
   src: local(Minecraft Bold Italic),
-    url(mcnameit/4_MinecraftBoldItalic1.woff) format("woff");
+    url(https://raw.githubusercontent.com/Shyxuu2/Portfolio/main/4_MinecraftBoldItalic1.woff) format("woff");
 }
 #editor {
   font-family: Minecraft Regular;
