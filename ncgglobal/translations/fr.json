@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "divisions": "Divisions",
+    "about": "À propos",
+    "insights": "Perspectives",
+    "contact": "Contact"
+  },
+  "hero": {
+    "alpha": "NCG Alpha",
+    "title": "Intelligence Urbaine Intégrée",
+    "subtitle": "Stratégie • Design • Livraison • Innovation • Investissement • Éducation",
+    "exploreDivisions": "Découvrir les Six Divisions",
+    "aboutDamien": "À propos du Dr Damien Nouvel"
+  },
+  "divisions": {
+    "label": "Divisions",
+    "title": "Six Piliers de l'Intelligence Urbaine",
+    "advisory": {
+      "name": "Conseil",
+      "description": "Façonner des Développements Intelligents"
+    },
+    "studio": {
+      "name": "Studio",
+      "description": "Concevoir l'Intelligence Urbaine de Demain"
+    },
+    "projectManagement": {
+      "name": "Gestion de Projet",
+      "description": "Livrer la Précision"
+    },
+    "innovation": {
+      "name": "Innovation",
+      "description": "Construire l'Avenir avec les Données"
+    },
+    "academy": {
+      "name": "Académie",
+      "description": "Où la Connaissance Rencontre la Pratique"
+    },
+    "investment": {
+      "name": "Investissement",
+      "description": "Transformer l'Analyse en Capital"
+    }
+  },
+  "about": {
+    "label": "À propos de NCG Alpha",
+    "title": "L'intelligence qui façonne les villes",
+    "description": "NCG Alpha est une plateforme multidisciplinaire d'immobilier et de développement urbain fondée par le Dr. Damien Nouvel. Elle réunit six entités spécialisées qui couvrent ensemble l'ensemble du spectre du développement, de la stratégie de marché à la conception, l'exécution, l'éducation, l'innovation et l'investissement. Basée à Riyad et à Dubaï, NCG Alpha allie la rigueur académique européenne à la connaissance du marché du CCG pour offrir une intelligence urbaine intégrée.",
+    "meetFounder": "Rencontrer le Fondateur",
+    "viewResearch": "Voir la Recherche & Publications"
+  },
+  "founder": {
+    "label": "Fondateur",
+    "title": "Leadership & Expertise",
+    "name": "Dr. Damien Nouvel – Fondateur & PDG de NCG Alpha",
+    "credentials": "Doctorat en Économie Immobilière et Urbaine | Ancien Professeur Associé | 20 ans d'expérience au CCG et en Europe.",
+    "description": "Ses recherches portent sur l'urbanisme durable, la PropTech et les économies urbaines.",
+    "visitWebsite": "Visiter le Site Personnel",
+    "viewProfile": "Voir le Profil de Recherche"
+  },
+  "insights": {
+    "label": "Perspectives & Recherche",
+    "title": "Des Idées qui Façonnent la Pratique",
+    "card1": {
+      "title": "L'ESG comme Catalyseur de l'Innovation Immobilière"
+    },
+    "card2": {
+      "title": "Les Jumeaux Numériques dans le Développement à Usage Mixte"
+    },
+    "card3": {
+      "title": "Le Récit de la Durabilité Saoudienne (Projet de Recherche 2025)"
+    },
+    "exploreMore": "Explorer Plus de Publications"
+  },
+  "contact": {
+    "label": "Contact & Connexion",
+    "title": "Construisons Quelque Chose d'Intelligent",
+    "subtitle": "Contactez-nous, info@ncgalpha.com",
+    "form": {
+      "name": "Nom",
+      "email": "Adresse Email",
+      "message": "Message",
+      "privacy": "J'accepte la politique de confidentialité",
+      "submit": "Envoyer le Message",
+      "successMessage": "Message envoyé avec succès ! Nous vous répondrons bientôt."
+    }
+  },
+  "footer": {
+    "copyright": "© NCG Alpha 2025 | Tous Droits Réservés"
+  }
+}

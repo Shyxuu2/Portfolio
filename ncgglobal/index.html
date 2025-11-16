@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCG Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-DDuH3lrP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CCEkXJAU.css">
+</head>
+<body>
+    <nav class="navbar" dir="ltr">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="#home">
+                    <span class="logo-text">NCG GLOBAL</span>
+                </a>
+            </div>
+
+            <ul class="navbar-menu">
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#divisions" class="nav-link" data-i18n="nav.divisions">Divisions</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#insights" class="nav-link" data-i18n="nav.insights">Insights</a></li>
+                <li><a href="#contact" class="nav-link nav-link-contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <span class="fi fi-us current-flag"></span>
+                    <span class="current-lang">EN</span>
+                    <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <button class="language-option" data-lang="en">
+                        <span class="fi fi-us"></span>
+                        <span>English</span>
+                    </button>
+                    <button class="language-option" data-lang="fr">
+                        <span class="fi fi-fr"></span>
+                        <span>Français</span>
+                    </button>
+                    <button class="language-option" data-lang="ar">
+                        <span class="fi fi-sa"></span>
+                        <span class="arabic-text">العربية</span>
+                    </button>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-menu-list">
+                <li><a href="#home" class="mobile-nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#divisions" class="mobile-nav-link" data-i18n="nav.divisions">Divisions</a></li>
+                <li><a href="#about" class="mobile-nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#insights" class="mobile-nav-link" data-i18n="nav.insights">Insights</a></li>
+                <li><a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="/videos/hero-background.mp4" type="video/mp4">
+            <source src="/videos/hero-background.webm" type="video/webm">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="alpha-badge" data-i18n="hero.alpha">NCG Alpha</div>
+                
+                <h1 class="hero-title" data-i18n="hero.title">Integrated Urban Intelligence</h1>
+                
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Strategy • Design • Delivery • Innovation • Investment • Education</p>
+                
+                <div class="hero-buttons">
+                    <a href="#divisions" class="btn-primary">
+                        <span data-i18n="hero.exploreDivisions">Explore the Six Divisions</span>
+                        <i class="fa-duotone fa-solid fa-arrow-right fa-lg icon-dark"></i>
+                    </a>
+                    <a href="#about" class="btn-secondary">
+                        <span data-i18n="hero.aboutDamien">About Dr Damien Nouvel</span>
+                        <i class="fa-duotone fa-solid fa-file-certificate fa-lg icon-light"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="divisions" class="divisions-section">
+        <div class="divisions-container">
+            <div class="divisions-header">
+                <div class="section-label" data-i18n="divisions.label">Divisions</div>
+                <h2 class="section-title" data-i18n="divisions.title">Six Pillars of Urban Intelligence</h2>
+            </div>
+            
+            <div class="divisions-grid">
+                <div class="division-card">
+                    <div class="division-icon">
+                        <i class="fa-duotone fa-solid fa-lightbulb-on fa-3x"></i>
+                    </div>
+                    <h3 class="division-name" data-i18n="divisions.advisory.name">Advisory</h3>
+                    <p class="division-description" data-i18n="divisions.advisory.description">Shaping Intelligent Developments</p>
+                </div>
+
+                <div class="division-card">
+                    <div class="division-icon">
+                        <i class="fa-duotone fa-solid fa-pen-ruler fa-3x"></i>
+                    </div>
+                    <h3 class="division-name" data-i18n="divisions.studio.name">Studio</h3>
+                    <p class="division-description" data-i18n="divisions.studio.description">Designing the Urban Intelligence of Tomorrow</p>
+                </div>
+
+                <div class="division-card">
+                    <div class="division-icon">
+                        <i class="fa-duotone fa-solid fa-clipboard-check fa-3x"></i>
+                    </div>
+                    <h3 class="division-name" data-i18n="divisions.projectManagement.name">Project Management</h3>
+                    <p class="division-description" data-i18n="divisions.projectManagement.description">Delivering Precision</p>
+                </div>
+
+                <div class="division-card">
+                    <div class="division-icon">
+                        <i class="fa-duotone fa-solid fa-rocket-launch fa-3x"></i>
+                    </div>
+                    <h3 class="division-name" data-i18n="divisions.innovation.name">Innovation</h3>
+                    <p class="division-description" data-i18n="divisions.innovation.description">Building the Future with Data</p>
+                </div>
+
+                <div class="division-card">
+                    <div class="division-icon">
+                        <i class="fa-duotone fa-solid fa-graduation-cap fa-3x"></i>
+                    </div>
+                    <h3 class="division-name" data-i18n="divisions.academy.name">Academy</h3>
+                    <p class="division-description" data-i18n="divisions.academy.description">Where Knowledge Meets Practice</p>
+                </div>
+
+                <div class="division-card">
+                    <div class="division-icon">
+                        <i class="fa-duotone fa-solid fa-chart-line-up fa-3x"></i>
+                    </div>
+                    <h3 class="division-name" data-i18n="divisions.investment.name">Investment</h3>
+                    <p class="division-description" data-i18n="divisions.investment.description">Turning Insight into Equity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img id="about-img" alt="NCG Alpha" class="founder-image">
+            </div>
+            <div class="about-content">
+                <div class="about-label" data-i18n="about.label">About NCG Alpha</div>
+                <h2 class="about-title" data-i18n="about.title">Intelligence that shapes cities</h2>
+                <p class="about-text" data-i18n="about.description">
+                    NCG Alpha is a multidisciplinary real estate and urban development platform founded by Dr. Damien Nouvel.
+                    It unites six specialized entities that together cover the full development spectrum from market strategy to design, execution, education, innovation, and investment.
+                    Based in Riyadh and Dubai, NCG Alpha blends European academic rigor with GCC market insight to deliver integrated urban intelligence.
+                </p>
+                <div class="about-buttons">
+                    <a href="#founder" class="btn-primary">
+                        <span data-i18n="about.meetFounder">Meet the Founder</span>
+                        <i class="fa-duotone fa-solid fa-user fa-lg icon-dark"></i>
+                    </a>
+                    <a href="#research" class="btn-secondary">
+                        <span data-i18n="about.viewResearch">View Research & Publications</span>
+                        <i class="fa-duotone fa-solid fa-book-open fa-lg icon-light"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder" class="founder-section">
+        <div class="founder-container">
+            <div class="founder-content">
+                <div class="founder-label" data-i18n="founder.label">Founder</div>
+                <h2 class="founder-title" data-i18n="founder.title">Leadership & Expertise</h2>
+                <h3 class="founder-name" data-i18n="founder.name">Dr. Damien Nouvel – Founder & CEO of NCG Alpha</h3>
+                <p class="founder-credentials" data-i18n="founder.credentials">PhD in Real Estate and Urban Economics | Former Associate Professor | 20 years of GCC and European experience.</p>
+                <p class="founder-description" data-i18n="founder.description">His research focuses on sustainable urbanism, PropTech, and city economies.</p>
+                <div class="founder-buttons">
+                    <a href="#" class="btn-primary">
+                        <span data-i18n="founder.visitWebsite">Visit Personal Website</span>
+                        <i class="fa-duotone fa-solid fa-arrow-up-right-from-square fa-lg icon-dark"></i>
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <span data-i18n="founder.viewProfile">View Research Profile</span>
+                        <i class="fa-duotone fa-solid fa-microscope fa-lg icon-light"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="founder-image">
+                <img id="founder-img" alt="Dr. Damien Nouvel" class="founder-image-element">
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="insights-section">
+        <div class="insights-container">
+            <div class="insights-header">
+                <div class="section-label" data-i18n="insights.label">Insights & Research</div>
+                <h2 class="section-title" data-i18n="insights.title">Ideas that Shape Practice</h2>
+            </div>
+            
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-image">
+                        <img id="insight-img-1" alt="ESG Research" class="insight-img">
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title" data-i18n="insights.card1.title">ESG as a Catalyst for Real Estate Innovation</h3>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-image">
+                        <img id="insight-img-2" alt="Digital Twins" class="insight-img">
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title" data-i18n="insights.card2.title">Digital Twins in Mixed-Use Development</h3>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-image">
+                        <img id="insight-img-3" alt="Saudi Sustainability" class="insight-img">
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title" data-i18n="insights.card3.title">The Saudi Sustainability Narrative (2025 Research Project)</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insights-button">
+                <a href="#" class="btn-primary">
+                    <span data-i18n="insights.exploreMore">Explore More Publications</span>
+                    <i class="fa-duotone fa-solid fa-books fa-lg icon-dark"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.9876543210123!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ5LjAiTiA0NsKwNDAnMzEuMSJF!5e0!3m2!1sen!2ssa!4v1234567890123!5m2!1sen!2ssa" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="google-map">
+                </iframe>
+            </div>
+            <div class="contact-content">
+                <div class="contact-label" data-i18n="contact.label">Contact & Connect</div>
+                <h2 class="contact-title" data-i18n="contact.title">Let's Build Something Intelligent</h2>
+                <p class="contact-subtitle" data-i18n="contact.subtitle">Reach out to us, info@ncgalpha.com</p>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label" data-i18n="contact.form.name">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label" data-i18n="contact.form.email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label" data-i18n="contact.form.message">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy" class="checkbox-label" data-i18n="contact.form.privacy">I agree to the privacy policy</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary form-submit">
+                        <span data-i18n="contact.form.submit">Send Message</span>
+                        <i class="fa-duotone fa-solid fa-paper-plane fa-lg icon-dark"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-copyright">
+                <span data-i18n="footer.copyright">© NCG Alpha 2025 | All Rights Reserved</span>
+            </div>
+            
+            <div class="footer-logo">
+                <span class="logo-text">NCG GLOBAL</span>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin fa-xl"></i>
+                </a>
+                <a href="mailto:info@ncgalpha.com" class="social-link" aria-label="Email">
+                    <i class="fa-solid fa-envelope fa-xl"></i>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook fa-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

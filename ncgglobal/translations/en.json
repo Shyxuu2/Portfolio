@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Home",
+    "divisions": "Divisions",
+    "about": "About",
+    "insights": "Insights",
+    "contact": "Contact"
+  },
+  "hero": {
+    "alpha": "NCG Alpha",
+    "title": "Integrated Urban Intelligence",
+    "subtitle": "Strategy • Design • Delivery • Innovation • Investment • Education",
+    "exploreDivisions": "Explore the Six Divisions",
+    "aboutDamien": "About Dr Damien Nouvel"
+  },
+  "divisions": {
+    "label": "Divisions",
+    "title": "Six Pillars of Urban Intelligence",
+    "advisory": {
+      "name": "Advisory",
+      "description": "Shaping Intelligent Developments"
+    },
+    "studio": {
+      "name": "Studio",
+      "description": "Designing the Urban Intelligence of Tomorrow"
+    },
+    "projectManagement": {
+      "name": "Project Management",
+      "description": "Delivering Precision"
+    },
+    "innovation": {
+      "name": "Innovation",
+      "description": "Building the Future with Data"
+    },
+    "academy": {
+      "name": "Academy",
+      "description": "Where Knowledge Meets Practice"
+    },
+    "investment": {
+      "name": "Investment",
+      "description": "Turning Insight into Equity"
+    }
+  },
+  "about": {
+    "label": "About NCG Alpha",
+    "title": "Intelligence that shapes cities",
+    "description": "NCG Alpha is a multidisciplinary real estate and urban development platform founded by Dr. Damien Nouvel. It unites six specialized entities that together cover the full development spectrum from market strategy to design, execution, education, innovation, and investment. Based in Riyadh and Dubai, NCG Alpha blends European academic rigor with GCC market insight to deliver integrated urban intelligence.",
+    "meetFounder": "Meet the Founder",
+    "viewResearch": "View Research & Publications"
+  },
+  "founder": {
+    "label": "Founder",
+    "title": "Leadership & Expertise",
+    "name": "Dr. Damien Nouvel – Founder & CEO of NCG Alpha",
+    "credentials": "PhD in Real Estate and Urban Economics | Former Associate Professor | 20 years of GCC and European experience.",
+    "description": "His research focuses on sustainable urbanism, PropTech, and city economies.",
+    "visitWebsite": "Visit Personal Website",
+    "viewProfile": "View Research Profile"
+  },
+  "insights": {
+    "label": "Insights & Research",
+    "title": "Ideas that Shape Practice",
+    "card1": {
+      "title": "ESG as a Catalyst for Real Estate Innovation"
+    },
+    "card2": {
+      "title": "Digital Twins in Mixed-Use Development"
+    },
+    "card3": {
+      "title": "The Saudi Sustainability Narrative (2025 Research Project)"
+    },
+    "exploreMore": "Explore More Publications"
+  },
+  "contact": {
+    "label": "Contact & Connect",
+    "title": "Let's Build Something Intelligent",
+    "subtitle": "Reach out to us, info@ncgalpha.com",
+    "form": {
+      "name": "Name",
+      "email": "Email Address",
+      "message": "Message",
+      "privacy": "I agree to the privacy policy",
+      "submit": "Send Message",
+      "successMessage": "Message sent successfully! We'll get back to you soon."
+    }
+  },
+  "footer": {
+    "copyright": "© NCG Alpha 2025 | All Rights Reserved"
+  }
+}
